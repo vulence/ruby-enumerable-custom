@@ -1,0 +1,1 @@
+Enumerable Ruby methods recreated for practice.
