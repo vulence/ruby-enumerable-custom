@@ -86,10 +86,10 @@ module Enumerable
 		return cnt
 	end
 	
-	def my_map
+	def my_map(&proc)
 		res = []
 		for elem in self do
-			res.push(yield(elem))
+			res.push(proc.call(elem))
 		end
 		return res
 	end
@@ -180,6 +180,8 @@ puts
 
 puts "MY MAP: \n"
 puts (1..4).my_map {|item| item * item}
+nproc = Proc.new {|item| item * item }
+puts (1..4).my_map(&nproc)
 puts
 
 puts "MY INJECT: "
